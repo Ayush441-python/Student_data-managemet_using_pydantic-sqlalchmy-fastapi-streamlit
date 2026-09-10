@@ -19,7 +19,7 @@ SessionLocal= sessionmaker(
 
 
 
-def get_bd():
+def get_db():
     db = SessionLocal()
 
     try:

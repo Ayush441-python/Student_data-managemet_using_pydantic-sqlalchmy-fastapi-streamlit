@@ -1,10 +1,19 @@
 from pydantic import BaseModel, EmailStr
-from typing import Literal
 
 
 class StudentCreate(BaseModel):
-    roll_no = int 
-    name = str
-    email = EmailStr
-    branch = Literal["CSE", "IT", "ECE", "EE", "Mech", "Civil"]
+    roll_no: int
+    name: str
+    email: EmailStr
+    branch : str
 
+
+class StudentResponse(BaseModel):
+    id: int
+    roll_no: int
+    name: str
+    email: str
+    branch :str
+
+    class Config:
+        from_attributes = True

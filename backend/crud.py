@@ -1,16 +1,16 @@
 from sqlalchemy.orm import Session
 
-from model import Student
-from schemas import StudentCreate
+from .model import Student
+from .schemas import StudentCreate
 
 
 
 def create_student(db:Session, student:StudentCreate):
     db_student = Student(
+        roll_no = student.roll_no,
         name=student.name,
         email=student.email,
-        age=student.age,
-        course=student.course
+        branch = student.branch        
     )
 
 
